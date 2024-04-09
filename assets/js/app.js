@@ -7,6 +7,7 @@ const selectorId = (id) => {
 const body = document.querySelector("body");
 
 // Orientations Reference
+const orList = document.querySelector(".orientation__list").children;
 const orRight = selectorId("or-right");
 const orLeft = selectorId("or-left");
 const orDown = selectorId("or-down");
@@ -39,6 +40,15 @@ const generate = () => {
   body.style.backgroundImage = `linear-gradient(to right, ${hexOne}, ${hexTwo}`;
   inputOne.value = `${hexOne}`;
   inputTwo.value = `${hexTwo}`;
+  cssCode.innerText = `linear-gradient(to right, ${hexOne}, ${hexTwo});`;
 };
 
 generateBtn.addEventListener("click", generate);
+
+
+
+  for (let i = 0; i < orList.length; i++) {
+    orList[i].addEventListener("click", function() {
+        cssCode.innerText = `linear-gradient(to ${orList[i].name}, ${hexOne}, ${hexTwo});`;
+    });
+  }
