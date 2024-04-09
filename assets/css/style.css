@@ -9,19 +9,18 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background-image: linear-gradient(to right, #411c4d, #9169ff);
+  background-image: linear-gradient(to right, #BB56C0, #0f20c7);
 }
 
 a {
-    text-decoration: none;
-    display: inline-block;
-    color: #000;
+  text-decoration: none;
+  display: inline-block;
+  color: #000;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
-
 
 .container-full {
   width: 100%;
@@ -43,57 +42,180 @@ ul {
 
 /* Navogation */
 .navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  margin-top: 16px;
 }
 
 .brand {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .brand > img {
-    width: 100%;
-    max-width: 70px;
+  width: 100%;
+  max-width: 70px;
 }
 
 .brand > span {
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .nav__list {
-    display: flex;
-    align-items: center;
-    gap: 22px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
 }
 
 .nav__link {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.88px;
-    color: #fff;
-    position: relative;
-    padding-bottom: 4px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.88px;
+  color: #fff;
+  position: relative;
+  padding-bottom: 4px;
 }
 
 .nav__link::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background-color: #fff;
-    top: 100%; 
-    right: 0;
-    left: auto;
-    transition: all 0.3s ease;
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  top: 100%;
+  right: 0;
+  left: auto;
+  transition: all 0.3s ease;
 }
 
-.nav__link:hover::after{
+.nav__link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Color Section */
+.color {
+  padding: 80px 0;
+}
+
+.color__body {
+  text-align: center;
+}
+
+.color__title {
+  color: #fff;
+  font-weight: 900;
+  margin-bottom: 30px;
+  text-shadow: 2px 3px 0px #898999;
+  line-height: 1.2;
+  margin-bottom: 35px;
+  font-size: 2.2rem;
+}
+
+.color__subtext,
+.color__generate--text {
+  font-weight: 900;
+  display: block;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.orientation__list {
+  width: 260px;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.orientation__item {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fff;
+  font-size: 1.65rem;
+  background: transparent;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.color__inputs {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0 30px;
+}
+
+.color__input, .color__generate--btn {
+    background-color: #fff;
+    height: 50px;
+    text-align: center;
+    width: 180px;
+    border: none;
+    border-radius: 50px;
+    -webkit-box-shadow: 10px 10px 14px 1px rgba(00,00,00,0.2);
+    box-shadow: 10px 10px 14px 1px rgba(00,00,00,0.2);
+    letter-spacing: 0.094em;
+}
+
+.color__generate--btn {
+    display: inline-block;
+    position: relative;
+    background: #00c9b7;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+.color__infos {
+    margin: 40px auto;
     width: 100%;
-    left: 0;  
+    max-width: 450px;
+    text-align: left;
+}
+
+.color__code{
+    margin-top: 4px;
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    width: 100%;
+    display: block;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+    border-left: 3px solid #fff;
+    background-color: rgba(189,189,189,0.1);
+    padding: 15px 8px 15px 17px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 555.98px) {
+    .color {
+        padding: 40px 0;
+    }
+
+    .navigation {
+        flex-direction: column;
+        gap: 20px;
+        height: auto;
+    }
+
+    .color__inputs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .color__title {
+        line-height: 1.5;
+        font-size: 1.75rem;
+    }
 }
